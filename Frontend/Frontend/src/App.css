@@ -15,7 +15,10 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-
+.nav {
+  display: flex;
+  z-index: 1;
+}
 
 .pathContainer {
   width: 50%;
@@ -27,6 +30,7 @@
   width: 30%;
   display: flex;
   justify-content: center;
+
 }
 
 .bodyText {
@@ -34,12 +38,60 @@
   font-size: 14px;
 }
 
+.navButtons {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  width: 15%;
+  transition: 0.25s;
+  user-select: none;
+}
+
+.navButtons:hover:not(#medicalImage) {
+  transform: translateY(-5px);
+  transition: 0.25s;
+}
+
 /* Hero Container */
 
-.heroContainer {
-  background: linear-gradient(to bottom, white, #fffcd3);
+.hero {
+  z-index: 0;
+  background: linear-gradient(to bottom, white, #59d0ff);
   background-repeat: no-repeat;
   display: flex;
-  height: 91vh;
+  justify-content: center;
+  align-items: center;
+  height: 90.9vh;
   width: 100%;
+}
+
+.heroContainer {
+  z-index: 1;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 7rem;
+  width: 60%;
+  height: 60%;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 100px;
+  user-select: none;
+}
+
+.heroText {
+  font-size: 1.75rem;
+}
+
+.heroBig {
+  font-size: 5rem;
+  margin-top: -2.5rem;
+}
+
+.imageContainer {
+  padding: 100px;
 }

@@ -1,7 +1,7 @@
 import '../App.css'
 import Nav from '../components/nav'
 import Hero from '../components/hero'
-function App() {
+function LandingPage() {
 
   return (
     <>
@@ -11,4 +11,4 @@ function App() {
   )
 }
 
-export default App
+export default LandingPage

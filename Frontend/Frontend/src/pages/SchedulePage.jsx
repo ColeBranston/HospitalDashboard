@@ -1,9 +1,20 @@
-import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { Navigate } from 'react-router-dom'
 import Nav from '../components/nav'
+import {checkLogin} from '../contexts/LoggedInContext'
 
 const SchedulePage = () => {
+    const {isLoggedIn, setIsLoggedIn} = useContext(checkLogin)
     return(
-        <Nav/>
+        <>
+            {isLoggedIn?
+                <>
+                <Nav/>
+                </>
+                :
+                <Navigate to ="/LoginPage"/>
+            }
+        </>
     )
 }
 

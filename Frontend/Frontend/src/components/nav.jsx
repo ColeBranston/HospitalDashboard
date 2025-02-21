@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import MedicalIcon from '../assets/medicalSymbol.ico'
+import { checkLogin } from '../contexts/LoggedInContext';
+import { useContext } from 'react';
 const Nav = () => {
+    const {isLoggedIn, setIsLoggedIn} = useContext(checkLogin)
     return (
         <div className='nav'>
             <div className="mainContainer">
@@ -12,9 +15,16 @@ const Nav = () => {
                     <Link to="/SchedulePage" className='navButtons'><div><p>Schedule</p></div></Link>
                 </div>
                 <div className="accountContainer">
-                    <div>
-                        <p>Account</p>
-                    </div>
+                    {
+                        isLoggedIn?
+                        <div>
+                            <Link to="/AccountPage"><div className='glowingButton'><p>Account</p></div></Link>
+                        </div>
+                        :
+                        <div>
+                            <Link to="/LoginPage"><div className='glowingButton'><p>Log In</p></div></Link>
+                        </div>
+                        }
                 </div>
             </div>
         </div>
